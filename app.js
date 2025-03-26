@@ -22,7 +22,7 @@ function loadSVG(svgPath, targetElement) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    flashCardList = (JSON.parse(localStorage.getItem('flashCardList'))) 
+    flashCardList = (JSON.parse(localStorage.getItem('flashCardList'))) || []
     renderFlashCards();
 })
 
