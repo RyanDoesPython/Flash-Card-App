@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="mainMenu.css" rel="stylesheet">
+    <link href="editScreen.css" rel="stylesheet">
+    <link href="studyScreen.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainMenu" class="mainMenu">
+        <header>
+            <!-- <input> -->
+            <button class = "newSetButton" id="newSetButton">New Set +</button>
+        </header>
+        <div class="newSetInfo" id="newSetInfo">
+            <p class="newSetInfoHeader">Set Name</p>
+            <input class="newSetInfoInput" id="setNameInput">
+            <p class="newSetInfoHeader">Tag</p>
+            <select class="newSetInfoInput" id="dropdown">
+                <option value="other">Other</option>
+                <option value="spanish">Spanish</option>
+                <option value ="socialStudies">Social Studies</option>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+            </select>
+            <div class="newSetInfoButtons">
+                <button id="createSetButton" class="createSetButton">Create Set</button>
+                <button id="cancelCreateSetButton" class="cancelCreateSetButton">Cancel</button>
+            </div>
+        </div>
+    
+        <div class="editFlashCardSetDiv" id="editFlashCardSetDiv">
+            <button class="deleteFlashCardSetButton" id="deleteFlashCardSetButton">Delete</button>
+            <button class="editFlashCardSetButton" id="editFlashCardSetButton">Edit</button>
+        </div>
+        <div class="flashCardSetHolder" id="flashCardSetHolder">
+            
+        </div>
+    </div>
+    <div id="editScreen" class="editScreen">
+        <header>
+            <button class = "backButton" id="backButton">
+                <svg class="backSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#4A90E2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Circle Outline -->
+                    <circle cx="50" cy="50" r="45"/>
+                    <!-- Back Arrow -->
+                    <polyline points="55,30 35,50 55,70"/>
+                  </svg>
+            </button>
+            <input id="flashCardSetTitle" class="FlashCardSetTitle" placeholder="Flash Card Title">
+            <select class="flashCardTagDropdown" id="flashCardTagDropdown">
+                <option value="other">Other</option>
+                <option value="spanish">Spanish</option>
+                <option value ="socialStudies">Social Studies</option>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="english">English</option>
+            </select>
+            <button class="saveButton" id="saveButton">Save Set</button>
+        </header>
+        <div class="flashCardEditorHolder" id="flashCardEditorHolder">
+            <button class="addFlashCardButton" id="addFlashCardButton">Add Flashcard</button>
+        </div>
+    </div>
+
+    <div id="studyScreen" class="studyScreen">
+        <header class="studyHeader">
+            <button class = "backButton studyScreenBackButton" id="studyScreenBackButton">
+                <svg class="backSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#4A90E2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Circle Outline -->
+                    <circle cx="50" cy="50" r="45"/>
+                    <!-- Back Arrow -->
+                    <polyline points="55,30 35,50 55,70"/>
+                  </svg>
+            </button>
+            <p class="studySetTitle" id="studySetTitle"></p>
+        </header>
+        <div id="mainDiv" class="mainDiv">
+            <div class="flashCardHeader">
+                <div class="leftHeader">
+                    <p class="stillLearningCounterText" id="stillLearningCounterText">0</p>
+                    <p class="stillLearningText">Still Learning</p>
+                </div>
+                <div class="rightHeader">
+                    <p class="knowText">Know</p>
+                    <p id="knowCounterText" class="knowCounterText">0</p>
+                </div>
+            </div>
+            <button id="flashCard" class="flashCard">
+                <p class="flashCardText" id="flashCardText">Term Text</p>
+            </button>
+            <div class="buttonHolder">
+                <button id="wrongButton" class="wrongButton">
+                    <svg class="wrongSVG" width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6L18 18" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M18 6L6 18" stroke-width="3" stroke-linecap="round"/>
+                    </svg>                     
+                </button>
+                <button id="correctButton" class="correctButton">
+                    <svg class="correctSVG" width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 12L9 17L20 6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> 
+                </button>
+            </div>
+        </div>
+        <div id="resDiv" class="resDiv">
+            <h1 class="resDivHeader">Results</h1>
+            <div id="correctAnswers" class="correctAnswers">
+                <div id="correctAnswersProgress" class="correctAnswersProgress"></div>
+                <p id="correctAnswersProgressText" class="correctAnswersProgressText">7/10</p>
+            </div>
+            <div id="wrongAnswers" class="wrongAnswers">
+                <div id="wrongAnswersProgress" class="wrongAnswersProgress"></div>
+                <p id="wrongAnswersProgressText" class="wrongAnswersProgressText">3/10</p>
+            </div>
+            <button class="reviewButton" id="reviewButton">Create Flash Cards From Wrong Answers</button>
+        </div>
+    </div>
+    
+    <script src="globalVariables"></script>
+    <script src="app.js"></script>
+    <script src="edit.js"></script>
+    <script src="study.js"></script>
+</body>
+</html>

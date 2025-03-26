@@ -1,0 +1,217 @@
+:root {
+    --primary-main: #112D4E;
+    --primary-dark: #0A192F;
+    --primary-dark-half-opacity: hsla(216, 65%, 11%, 0.5); 
+    --accent-main: #4A90E2;
+    --accent-dark: #285E9D;
+    --text-color: #FFFAEF;
+    --text-color2: #D1E6FF;
+    --text-color2-half-opacity: hsla(213, 100%, 91%, 0.4);
+}
+
+.editScreen{
+    display: none;
+    overflow-x: hidden;
+}
+.backButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    background-color: transparent;;
+    border: none;
+    margin-right: 100px;
+}
+.backButton:hover{
+    .backSVG{
+        stroke: #2673cc
+    }
+}
+.backSVG {
+    width: 130%;
+    height: 130%;
+    flex-shrink: 0;
+}
+.FlashCardSetTitle{
+    width: 30%;
+    height: 35px;
+    border-radius: 15px;
+    border: solid var(--accent-main) 4px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-right: 25px;
+}
+.FlashCardSetTitle:focus {
+    border-color: #58a6ff;
+    outline: none;
+}
+.flashCardTagDropdown{
+    width: 14%;
+    height: 45px;
+    border-radius: 15px;
+    border: solid var(--accent-main) 4px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-right: 25px;
+    appearance: none; /* Removes default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234A90E2"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0px center;
+    background-size: 40px; /* Makes the arrow bigger */
+    margin-right: 450px;
+}
+/* Styling the dropdown (this doesn't work in all browsers, especially older ones) */
+select option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-color: #58a6ff
+}
+
+select option:hover {
+    background-color: #f0f8ff;
+}
+.saveButton{
+    position: absolute;
+    right: 7.5%;
+    background-color: var(--accent-main);
+    color: var(--primary-dark);
+    border: var(--accent-dark) solid 4px;
+    border-radius: 6px;
+    height: 45px;
+    width: 120px;
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: center;
+}
+.saveButton:hover{
+    background-color: #2b7fdf;
+    border-color:#0a4c98;
+    color:#021029
+}
+
+.flashCardEditorHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex-direction: column;
+}
+.addFlashCardButton {
+    position: relative;
+    width: 80%;
+    height: 150px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary-dark);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.addFlashCardButton::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 5px dashed var(--accent-main);
+    border-radius: 15px;
+    pointer-events: none; /* So clicks go through */
+}
+.addFlashCardButton:hover{
+    background-color: rgb(10, 22, 44);
+}
+.flashCardEditor{
+    width: 80%;
+    height: 160px;
+    margin-top: 30px;
+    background-color: var(--primary-dark);
+    border-radius: 15px;
+}
+.underline{
+    width: 170px;
+    border: solid var(--accent-main) 3px;
+    margin: 0px;
+    padding: 0px;
+}
+.dividerLine{
+    border:solid 2px var(--primary-main);
+    margin: 0px;
+    padding: 0px;
+}
+.headerDiv{
+    height: 40px;
+    display:flex;
+    align-items: center;
+}
+.number{
+    margin-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 93%;
+}
+.inputDiv{
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.termInputDiv, .definitionInputDiv{
+    width: 41%;
+    flex-shrink: 0;
+}
+.definitionInput, .termInput{
+    width: 100%;
+    border: none;
+    border-bottom: solid 3px;
+    border-color: rgb(255,255,255);
+    background-color: transparent;
+    padding-bottom: 4px;
+    padding-right: 0px;
+    padding-left: 3px;
+    color: var(--text-color2);
+    font-size: 18px;
+    
+}
+.definitionInput::placeholder, .termInput::placeholder {
+    color: var(--text-color2-half-opacity);
+    font-size: 18px;
+}
+.termInputDiv{
+    margin-left: 45px;
+    
+}
+.definitionInputDiv{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.trashButtonSVG{
+    width: 30px;
+    height: 30px;
+    stroke: var(--accent-main);
+    
+}
+.deleteButton{
+    background-color: transparent;
+    border: none
+}
+.deleteButton:hover{
+    .trashButtonSVG{
+        stroke:#57a6ff
+    }
+}

@@ -1,0 +1,197 @@
+:root {
+    --primary-main: #112D4E;
+    --primary-dark: #0A192F;
+    --primary-dark-half-opacity: hsla(216, 65%, 11%, 0.5); 
+    --accent-main: #4A90E2;
+    --accent-dark: #285E9D;
+    --text-color: #FFFAEF;
+    --text-color2: #D1E6FF;
+    --text-color2-half-opacity: hsla(213, 100%, 91%, 0.4);
+}
+
+.studyScreen{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.studyHeader{
+    display: flex;
+    align-items: center;
+}
+.studyScreenBackButton{
+    margin-right: 40%;
+}
+.studySetTitle{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    position:absolute;
+    width: 500px;
+    left: calc(50% - 250px);
+}
+
+.mainDiv{
+    width: 700px;
+    height: 500px;
+    margin-top: 70px;
+}
+.flashCardHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Ensures both sections are separated */
+}
+
+.leftHeader {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the start */
+    align-items: center;
+    margin-left: 15px;
+}
+.stillLearningCounterText{
+    margin-right: 10px;
+}
+.rightHeader {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the end */
+    align-items: center;
+    margin-right: 15px;
+}
+.knowCounterText{
+    margin-left: 10px;
+}
+.knowCounterText, .stillLearningCounterText{
+    border: solid;
+    width: 40px;
+    text-align: center;
+    border-radius: 15px;;   
+    border: solid 4px var(--accent-main)
+
+}
+.stillLearningCounterText, .knowCounterText, .knowText, .stillLearningText{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+
+
+.flashCard{
+    width: 100%;
+    height: 370px;
+    background-color: var(--primary-dark);
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flashCardText{
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+}
+.buttonHolder{
+    display: flex; 
+    justify-content: center;
+    gap: 75px;
+}
+.wrongButton, .correctButton{
+    width: 80px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-dark);
+    border-radius: 30px;;
+    margin-top: 10px;
+    border: none
+
+}
+.wrongSVG, .correctSVG{
+    width: 80px;
+    height: 60px;
+    flex-shrink: 0;
+    stroke: #4A90E2;
+    /* border: solid */
+}
+.wrongButton:hover, .correctButton:hover{
+    background-color: #000000;
+    .wrongSVG, .correctSVG{
+        stroke:#56a5ff;
+    }
+}
+
+.resDiv{
+    display: none;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 500px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+.resDivHeader{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white
+}
+.correctAnswers, .wrongAnswers {
+    width: 60%;
+    height: 30px;
+    border: solid 4px black; /* Add stroke outline */
+    border-radius: 20px;
+    position: relative; /* Needed for layering */
+    overflow: hidden; /* Ensures progress bar doesn’t exceed the border */
+    margin-bottom: 10px;
+}
+
+.correctAnswersProgress {
+    width: 70%; /* Dynamic width based on progress */
+    height: 100%;
+    background-color: rgb(75, 255, 100);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Places progress under the border */
+}
+.wrongAnswersProgress {
+    width: 30%; /* Dynamic width based on progress */
+    height: 100%;
+    background-color: rgb(255, 100, 75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Places progress under the border */
+}
+
+.correctAnswersProgressText, .wrongAnswersProgressText {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers text */
+    font-weight: bold;
+    color: white; /* Adjust based on background */
+    z-index: 1; /* Ensures text is above the progress bar */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.reviewButton{
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px rgb(255, 255, 255);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.reviewButton:hover{
+    border-color: var(--accent-main);;
+    color: var(--text-color2);
+    cursor: pointer;
+}
