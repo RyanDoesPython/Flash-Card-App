@@ -88,7 +88,7 @@ function renderFlashCards() {
         flashCardSetHolder.appendChild(setCard); // Append the setCard to the flashCardSetHolder
 
         // Load the SVG into the <svg> element
-        loadSVG(`./SVGs/${flashCardSet.tag}.svg`, svgElement);
+        loadSVG(`${flashCardSet.tag}.svg`, svgElement);
     });
 }
 
