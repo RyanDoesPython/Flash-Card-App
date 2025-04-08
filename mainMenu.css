@@ -64,6 +64,21 @@ header{
     border-color: var(--accent-main);
     border-radius: 10px;
 }
+
+.sortOptions{
+    margin-left: 50px;
+    background-color: var(--accent-main);
+    color: var(--primary-dark);
+    border: var(--accent-dark) solid 4px;
+    border-radius: 6px;
+    height: 45px;
+    width: 120px;
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: center;
+    font-size: 18px
+}   
+
 .createSetButton, .cancelCreateSetButton{
     background-color: #285f9d85;
     border: solid 4px var(--accent-main);
@@ -95,9 +110,9 @@ header{
     border-radius: 16px;
     color: var(--text-color);
     border: solid var(--accent-main);
-    font-size: 16px; /* Ensure text size matches */
-    padding: 5px; /* Adjust padding for consistency */
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    font-size: 16px; 
+    padding: 5px; 
+    box-sizing: border-box;
 }
 
 /* svg icons */
