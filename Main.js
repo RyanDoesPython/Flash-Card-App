@@ -108,5 +108,12 @@ sortOptions.addEventListener("change", function(){
 })
 
 function sortFlashCardList(sortType){
-    console.log(sortType)
+    if(sortType === "A-Z"){
+        flashCardList.sort((a, b) => a.id.localeCompare(b.id));
+    }else if(sortType === "Z-A"){
+        flashCardList.sort((a, b) => b.id.localeCompare(a.id));
+    }else if(sortType === "type"){
+        flashCardList.sort((a, b) => a.tag.localeCompare(b.tag));
+    }
+    renderFlashCards()
 }
