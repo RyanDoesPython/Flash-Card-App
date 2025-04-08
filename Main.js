@@ -108,12 +108,14 @@ sortOptions.addEventListener("change", function(){
 })
 
 function sortFlashCardList(sortType){
-    if(sortType === "A-Z"){
+    if(sortType === "A-Z"){ // Sorts the flashCardList alphabetically
         flashCardList.sort((a, b) => a.id.localeCompare(b.id));
-    }else if(sortType === "Z-A"){
+    }else if(sortType === "Z-A"){ // Sorts the flashCardList reverse alphabetically
         flashCardList.sort((a, b) => b.id.localeCompare(a.id));
-    }else if(sortType === "type"){
+    }else if(sortType === "type"){ // Sorts the flashCardList based on its tag
         flashCardList.sort((a, b) => a.tag.localeCompare(b.tag));
+    }else if(sortType === "length"){
+        flashCardList.sort((a, b) => b.flashCards.length - a.flashCards.length);
     }
     renderFlashCards()
 }
