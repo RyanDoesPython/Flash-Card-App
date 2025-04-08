@@ -4,6 +4,8 @@ const newSetInfo = document.getElementById("newSetInfo");
 const createSetButton = document.getElementById("createSetButton");
 const cancelCreateSetButton = document.getElementById("cancelCreateSetButton");
 
+const sortOptions = document.getElementById("sortOptions");
+
 const flashCardSetHolder = document.getElementById("flashCardSetHolder")
 
 const setNameInput = document.getElementById("setNameInput");
