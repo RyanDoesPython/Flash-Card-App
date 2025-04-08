@@ -103,7 +103,10 @@ deleteFlashCardSetButton.addEventListener("click", () => {
     }
 });
 
+sortOptions.addEventListener("change", function(){
+    sortFlashCardList(sortOptions.value)
+})
 
-
-
-
+function sortFlashCardList(sortType){
+    console.log(sortType)
+}
