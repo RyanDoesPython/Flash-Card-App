@@ -1,4 +1,6 @@
 let openFlashcardSet;
+
+// Defines a bunch of variables for later use
 const studySetTitle = document.getElementById("studySetTitle");
 const flashCardDisplay = document.getElementById("flashCard");
 const wrongButton = document.getElementById("wrongButton");
@@ -18,14 +20,15 @@ const wrongAnswersProgressText = document.getElementById("wrongAnswersProgressTe
 const correctAnswersDiv = document.getElementById("correctAnswers");
 const wrongAnswersDiv = document.getElementById("wrongAnswers");
 
-let wrongAnswers = 0;
-let correctAnswers = 0;
+let wrongAnswers = 0; // Tracks wrong answers
+let correctAnswers = 0; // Tracks Correct answers
 let termBeingDisplayed = true;
-let wrongAnswerList = [];
+let wrongAnswerList = []; // List of incorrect answers
 let tempWrongAnswerList = [];
 let inReviewMode = false;
 let currentCardNumber = 0;
 
+// Finds the selected set and loads the study screen with the information form that flashCardSet
 flashCardSetHolder.addEventListener("click", function(event) {
     const clickedSet = event.target.closest(".flashCardSet");
     if (clickedSet) { 
@@ -35,7 +38,7 @@ flashCardSetHolder.addEventListener("click", function(event) {
 
         openFlashcardSet = flashCardList.find(set => set.id === id);
 
-        if (openFlashcardSet && openFlashcardSet.flashCards.length > 0) {
+        if (openFlashcardSet && openFlashcardSet.flashCards.length > 0) { // Only opens if the flash card set has at least one flashCard
             mainMenu.style.display = "none";
             editScreen.style.display = "none";
             studyScreen.style.display = "flex";
@@ -59,6 +62,7 @@ flashCardSetHolder.addEventListener("click", function(event) {
     }
 });
 
+// Returns you back to main menu
 studyScreenBackButton.addEventListener("click", () => {
     mainMenu.style.display = "block";
     editScreen.style.display = "none";
@@ -66,7 +70,7 @@ studyScreenBackButton.addEventListener("click", () => {
 });
 
 
-
+// flips the card when clicked
 flashCardDisplay.addEventListener("click", () => {
     if (openFlashcardSet && openFlashcardSet.flashCards[currentCardNumber]) {
         flip();
@@ -127,12 +131,14 @@ function displayCard(flashCards) {
     }
 }
 
+// sets the information too the opposite term when clicked to simulate a flip
 function flip() {
     const currentCard = openFlashcardSet.flashCards[currentCardNumber];
     flashCardText.innerHTML = termBeingDisplayed ? currentCard.definition : currentCard.term;
     termBeingDisplayed = !termBeingDisplayed;
 }
 
+// Opens a new study set, but with the answers you got wrong.
 reviewButton.addEventListener("click", () => {
     wrongAnswerList = tempWrongAnswerList;
     tempWrongAnswerList = [];
